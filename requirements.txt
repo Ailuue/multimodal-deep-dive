@@ -1,0 +1,23 @@
+# Loads variables from a .env file (like OPENAI_API_KEY) into the environment.
+python-dotenv>=1.0.0
+
+# rich renders the tables and output in the examples and the capstone.
+rich>=13.0.0
+
+# --- Provider SDKs ---
+# You only strictly need the one matching your PROVIDER (see .env). Both are
+# light, and installing both lets you switch stacks with one env-var change.
+#
+# NOTE on capabilities: vision (image input) works on BOTH providers. Audio
+# (speech-to-text, text-to-speech) and image GENERATION are OpenAI-only — Claude
+# has no native audio API and does not generate images. The audio/image-gen
+# examples say so and degrade gracefully when PROVIDER=claude.
+
+# OpenAI — used when PROVIDER=openai (vision, Whisper STT, TTS, image gen).
+openai>=1.30.0
+
+# Anthropic — used when PROVIDER=claude (vision chat; no audio/image-gen).
+anthropic>=0.111.0
+
+# Nothing here is needed for the OFFLINE examples (the mock-vision demo and the
+# token-math demo) — those run on the standard library alone, with no key.
