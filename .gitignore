@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets — never commit your real keys
+.env
+
+# Editor / local history
+.history/
+.vscode/
+
+# Output written by the image-generation and text-to-speech examples
+out/
